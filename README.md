@@ -58,22 +58,11 @@ $ yarn start
 
 "proxy": "http://localhost:3001",
 
-"scripts": {
-
 3. start rails server (do this in your rails project directory)
-
-```
 
 rails s -p 3001
 
-```
-
-
-
-
 # REACT ...
-
-
 
  - Routes/Component/Nav (React Router UI/UX)
 
@@ -84,7 +73,8 @@ rails s -p 3001
  - Thing - render a single thing
 
  - ThingShow - render a single fact on it own page (React Router)
-- Thingthatbelongstothing Pages(tomorrow)
+
+ - Thingthatbelongstothing Pages(tomorrow)
 
  - axios calls (api call to interact with rails)
 
