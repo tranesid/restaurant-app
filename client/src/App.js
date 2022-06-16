@@ -1,48 +1,63 @@
-import './App.css';
-import { Outlet, Link, Route, Routes } from 'react-router-dom';
-import Menu from './Menu';
-import MenuForm from './Menu';
-import Items from './Items';
-import MenuList from './Menu/MenuList';
-import Crud from './CRUD';
-import MenuShow from './Menu/MenuShow';
+import "./App.css";
+import { Link, Route, Routes } from "react-router-dom";
+import Menu from "./pages/Menu";
+import Items from "./pages/Items";
+import Crud from "./pages/CRUD";
+import ErrorPage from "./pages/ErrorPage";
+import MenuForm from "./pages/Menu/MenuForm";
+import MenuList from "./pages/Menu/MenuList";
+import MenuShow from "./pages/Menu/MenuShow";
 
-const PageContainer = () => {
+
+const Home = () => {
   return (
-    <>
-    <div className='navbar'>
-      <Link to="/">Home</Link>
-      <Link to="/CRUD">CRUD</Link>
-      <Link to="/Menu">Menu</Link>
-    </div>
-    <div>
-      <Outlet />
-    </div>
-    </>
+  <h1>This is the home page</h1>
   )
 }
 
-const Home = () => {
-  return <p>Home page</p>
-}
 
 function App() {
   return (
     <div className="App">
-     <Routes>
-      <Route path='/' element={<PageContainer />}/>
-      <Route index element={<Home />}>
-      <Route path='/items' element={<Items />}/>
-      <Route path='/menu' element={<Menu />}/>
-      <Route path='/CRUD' element={<Crud />}/>
-        <Route index element={<MenuList />}/>
-        <Route path='/menu/new' element={<MenuForm />}/>
-        <Route path='/menu/:id/edit' element={<MenuForm />}/>
-        <Route path='/menu/:id' element={<MenuShow/>}/>
-      </Route>
-     </Routes>
+      <div className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/menu">Menu</Link>
+        <Link to="/items">Items</Link>
+        <Link to="/crud">Crud</Link>
+        </div>
+        <hr/>
+      <div>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/menu" element={<Menu />} />
+            <Route path="/menuform" element={<MenuForm />} />
+            <Route path="/menulist" element={<MenuList />} />
+            <Route path="/menushow" element={<MenuShow />} />
+          <Route path="/items" element={<Items />} />
+          <Route path="/crud" element={<Crud />} />
+          <Route path="*" element={<ErrorPage />} />
+       </Routes>
+      </div>
+      <hr/>
+      <div className="footer">
+      <div className="navbar">
+        <Link to="/">Home</Link>
+        <Link to="/menu">Menu</Link>
+        <Link to="/items">Items</Link>
+        <Link to="/crud">Crud</Link>
+        </div>
+
+      </div>
+   
     </div>
   );
 }
 
 export default App
+
+// redirecting button 
+
+// import {useNavigate} from "react-router-dom";
+
+// let navigate = useNavigate();
+// <button onClick={()=>{navigate("/target")}} >Change to a new page</button>

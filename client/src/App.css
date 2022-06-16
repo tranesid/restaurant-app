@@ -3,3 +3,9 @@ body {
   color: rgb(86, 85, 85);
   background-color: rgb(103, 192, 192);
 }
+
+a {
+  margin: 10px;
+  text-decoration: none;
+  color: rgb(197, 3, 197);
+}
