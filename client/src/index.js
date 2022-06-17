@@ -9,9 +9,9 @@ import DataProvider from './providers/DataProvider';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
-    <DataProvider>
+    {/* <DataProvider> */}
     <App />
-    </DataProvider>
+    {/* </DataProvider> */}
   </BrowserRouter>
 );
 
